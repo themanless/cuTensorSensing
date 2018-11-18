@@ -1,4 +1,4 @@
-function TS_example(DCTorFFt)
+function TS_fft_example(DCTorFFt)
     %% 构造人工数据
     L = randn(40, 1, 6);
     R = randn(1, 40, 6);
@@ -16,7 +16,7 @@ function TS_example(DCTorFFt)
     X_s = Tensor2SmallCircM(X);
     minSamplingRate = 20;
     minSamplingRate_copy = minSamplingRate;
-    maxSamplingRate = 80;
+    maxSamplingRate = 25;
     samplingNums = (maxSamplingRate - minSamplingRate)/5 + 1;
     error = zeros(samplingNums, 1);
     errot_index = 1;
@@ -50,8 +50,8 @@ function TS_example(DCTorFFt)
         errot_index = errot_index  + 1;
     end
     %% 画误差曲线                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-    plotRSE(DCTorFFt, minSamplingRate_copy, maxSamplingRate, error');
-    plot_shou_lian_lv(DCTorFFt, iterationNums, error_all(:,13)');
+    %plotRSE(DCTorFFt, minSamplingRate_copy, maxSamplingRate, error');
+    %plot_shou_lian_lv(DCTorFFt, iterationNums, error_all(:,13)');
 end
 
 

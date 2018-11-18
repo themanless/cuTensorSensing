@@ -31,7 +31,7 @@ end
 %% LSº¯Êý
     function [V] = LS_V(A2m, U, r, y, n)
         U_ = mat2diaMat(U,n);         % ±àÅÅºóµÄ¾ØÕó U    
-        W = A2m*U_; prediction. In this project I found the idea to be a littel better than the execution as they even say they need to improve the news source. However, if they are able to develop it more it wil
+        W = A2m*U_;
         V_ = W \ y ;
 %         V_ = lsqr(W, y, 1e-6, 100); 
         clear W;
