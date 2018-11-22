@@ -1,8 +1,4 @@
-#include <assert.h>
-#include <cuda_runtime.h>
-#include <cublas_v2.h>
-#include <cusolverDn.h>
-
+#include "lsqr.h"
 //solve A*x = b where size(A) m*n size(x) n*1 size(b) m*1
 void lsqr(float* A, float* X, float* B, int m, int n){
     cusolverDnHandle_t cusolverH = NULL;
@@ -30,8 +26,6 @@ void lsqr(float* A, float* X, float* B, int m, int n){
     int *devInfo = NULL; // info in gpu (device copy)
     float *d_work = NULL;
     int  lwork = 0;
-
-    int info_gpu = 0;
 
     const float one = 1;
 // step 1: create cusolver/cublas handle
@@ -86,8 +80,8 @@ void lsqr(float* A, float* X, float* B, int m, int n){
     assert(cudaSuccess == cudaStat1);
 
     // check if QR is good or not
-    cudaStat1 = cudaMemcpy(&info_gpu, devInfo, sizeof(int), cudaMemcpyDeviceToHost);
-    assert(cudaSuccess == cudaStat1);
+    //cudaStat1 = cudaMemcpy(&info_gpu, devInfo, sizeof(int), cudaMemcpyDeviceToHost);
+    //assert(cudaSuccess == cudaStat1);
 
 // step 5: compute Q^T*B
     cusolver_status= cusolverDnSormqr(
@@ -128,6 +122,8 @@ void lsqr(float* A, float* X, float* B, int m, int n){
     assert(CUBLAS_STATUS_SUCCESS == cublas_status);
     assert(cudaSuccess == cudaStat1);
     //transfer data back to CPU from GPU？
+    cudaStat1 = cudaMemcpy(X, d_B, sizeof(float)*n*nrhs, cudaMemcpyDeviceToHost);
+    assert(cudaSuccess == cudaStat1);
 
 // free resources
     if (d_A    ) cudaFree(d_A);
@@ -140,5 +136,5 @@ void lsqr(float* A, float* X, float* B, int m, int n){
     if (cublasH ) cublasDestroy(cublasH);
     if (cusolverH) cusolverDnDestroy(cusolverH);
 
-    //cudaDeviceReset();
+    cudaDeviceReset();
 }
