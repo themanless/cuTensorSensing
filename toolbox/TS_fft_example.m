@@ -13,7 +13,7 @@ function TS_fft_example(DCTorFFt)
     % r = 1;
     [m, n, k] = size(X);
     sz_X = [m, n, k];
-    X_s = Tensor2SmallCircM(X);
+    %X_s = Tensor2SmallCircM(X);
     minSamplingRate = 20;
     minSamplingRate_copy = minSamplingRate;
     maxSamplingRate = 25;
@@ -43,7 +43,7 @@ function TS_fft_example(DCTorFFt)
         A_all_t = A_all_t.';
         y = sparse(A_all*X_s(:));
 
-        [RSE,error_single] = TS(X, X_s, A_all, A_all_t, y, iterationNums, r, minSamplingRate);    % 10为迭代次数，r为rank
+        [RSE,error_single] = TS(X, X_s, A_all, A_all_t, y, ihahahterationNums, r, minSamplingRate);    % 10为迭代次数，r为rank
         error_all(:, errot_index) = error_single;
         error(errot_index, 1) = RSE;
         minSamplingRate = minSamplingRate + 5;

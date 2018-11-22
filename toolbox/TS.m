@@ -1,7 +1,8 @@
-function [RSE,error]=TS(X, X_s, A_all, A_all_t, y, IterNum, r, SamplingRate)
+function [RSE,error]=TS_fft(X, X_s, A_all, A_all_t, y, IterNum, r, SamplingRate)
 %% Simplified Alternating Minimization for tensor sensing
 % Problem state：min|| b - <A,(U*V)> ||_F^2, s.t.:tubal-rank of U * V=r
 % Input : X = U * V  - 理想数据，U:m * r * k,   V:r * n * k，    X：m * n * k
+
 %         A - 采样tensor，每一个前切面A_i大小为mk * n,每一个A_i与X做内积，所得的数作为y_i,1 <= i<= d
 %         IterNum - 算法迭代次数
 %         r - target tubal-rank
@@ -49,9 +50,3 @@ end
         U = (Vec2Mat(U_,[r, m])).';
     end
 end
-
-
-
-
-
-
