@@ -1,4 +1,4 @@
-function [RSE,error]=TS(X, X_s, A_all, A_all_t, y, IterNum, r, SamplingRate)
+function testTS(X, X_s, A_all, A_all_t, y, IterNum, r)
 %% Simplified Alternating Minimization for tensor sensing
 % Problem state：min|| b - <A,(U*V)> ||_F^2, s.t.:tubal-rank of U * V=r
 % Input : X = U * V  - 理想数据，U:m * r * k,   V:r * n * k，    X：m * n * k
@@ -22,10 +22,10 @@ U = Tensor2fullCircM(U0);     % U 初始化时化为循环矩阵
 for l = 1 : IterNum
     V = LS_V(A_all, U, r*k, y, n);
     U = LS_U(A_all_t, V, r*k, y, m*k);
-    X_ = U * V;
-    RSE = norm(X_s(:) - X_(:)) / norm(X_s(:));
-    fprintf('SamplingRate:%d,%d-th iteration,error is %e\n',SamplingRate,l,RSE);
-    error(l,:) = RSE;
+    %X_ = U * V;
+    %RSE = norm(X_s(:) - X_(:)) / norm(X_s(:));
+    %fprintf('SamplingRate:%d,%d-th iteration,error is %e\n',SamplingRate,l,RSE);
+    %error(l,:) = RSE;
 end
 
 %% LS函数

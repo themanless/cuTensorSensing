@@ -38,14 +38,10 @@ function TStest(m, n, k, r)
         y = sparse(A_all*X_s(:));
 
         t1 = clock;
-        [RSE,error_single] = TS(X, X_s, A_all, A_all_t, y, iterationNums, r, minSamplingRate);    % 10为迭代次数，r为rank
+        testTS(X, X_s, A_all, A_all_t, y, iterationNums, r);    % 10为迭代次数，r为rank
         t2 = clock;
         t = etime(t2, t1);
         fprintf('size[%d,%d, %d, %d] takes time %f\n', m, n, k, r, t);
-        error_all(:, errot_index) = error_single;
-        error(errot_index, 1) = RSE;
-        minSamplingRate = minSamplingRate + 5;
-        errot_index = errot_index  + 1;
     end
     %% 画误差曲线                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 end
