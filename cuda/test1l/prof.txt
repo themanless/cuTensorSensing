@@ -1,0 +1,835 @@
+
+======== CPU profiling result (bottom up):
+Time(%)      Time  Name
+ 56.80%  230.647s  ???
+ 49.54%   201.18s  | start_thread
+ 49.54%   201.18s  | | __clone
+  4.38%   17.787s  | ???
+  4.38%   17.787s  | | ???
+  4.38%   17.787s  | |   ???
+  4.38%   17.787s  | |     ???
+  4.38%   17.787s  | |       ???
+  4.38%   17.787s  | |         ???
+  4.38%   17.787s  | |           ???
+  4.38%   17.787s  | |             ???
+  4.38%   17.787s  | |               cublasCreate_v2
+  4.38%   17.787s  | |                 ???
+  4.38%   17.787s  | |                   ???
+  4.38%   17.787s  | |                     ???
+  4.38%   17.787s  | |                       ???
+  3.50%  14.2214s  | |                         ???
+  2.12%  8.62712s  | ???
+  2.12%  8.62712s  | | ???
+  2.12%  8.62712s  | |   ???
+  2.12%  8.62712s  | |     ???
+  2.12%  8.62712s  | |       ???
+  2.12%  8.62712s  | |         ???
+  2.12%  8.62712s  | |           ???
+  2.12%  8.62712s  | |             ???
+  2.12%  8.62712s  | |               ???
+  2.12%  8.62712s  | |                 cusolverDnCreate
+  2.12%  8.62712s  | |                   ???
+  2.12%  8.62712s  | |                     ???
+  2.12%  8.62712s  | |                       ???
+  2.12%  8.62712s  | |                         ???
+  2.12%  8.62712s  | |                           ???
+  0.74%  3.02257s  | cudaDeviceReset
+  0.74%  3.02257s  | | ???
+  0.74%  3.02257s  | |   ???
+  0.74%  3.02257s  | |     ???
+  0.74%  3.02257s  | |       ???
+  0.56%  2.26436s  | |         ???
+  0.01%  20.492ms  | cudaMalloc
+  0.01%  20.492ms  | | ???
+  0.01%  20.492ms  | |   ???
+  0.01%  20.492ms  | |     ???
+  0.01%  20.492ms  | |       ???
+  0.00%  10.246ms  | |         ???
+  0.00%  10.246ms  | cudaDeviceSynchronize
+  0.00%  10.246ms  |   ???
+  0.00%  10.246ms  |     ???
+  0.00%  10.246ms  |       ???
+  0.00%  10.246ms  |         ???
+  0.00%  10.246ms  |           ???
+ 14.90%  60.4923s  _IO_getc
+ 10.36%  42.0598s  | __gnu_cxx::stdio_sync_filebuf<char, void std::char_traits<char>()>::underflow
+  8.94%  36.3015s  | | ???
+  8.94%  36.3015s  | | | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE16_M_extract_floatES3_S3_RSt8ios_baseRSt12_Ios_IostateRSs
+  8.94%  36.3015s  | | |   _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  8.94%  36.3015s  | | |     _ZNSi10_M_extractIfEERSiRT_
+  8.94%  36.3015s  | | |       ???
+  8.94%  36.3015s  | | |         ???
+  0.88%  3.55536s  | | _ZNSi6sentryC1ERSib
+  0.88%  3.55536s  | | | _ZNSi10_M_extractIfEERSiRT_
+  0.88%  3.55536s  | | |   ???
+  0.88%  3.55536s  | | |     ???
+  0.54%  2.20289s  | | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.54%  2.20289s  | |   _ZNSi10_M_extractIfEERSiRT_
+  0.54%  2.20289s  | |     ???
+  0.54%  2.20289s  | |       ???
+  4.54%  18.4325s  | __gnu_cxx::stdio_sync_filebuf<char, void std::char_traits<char>()>::uflow
+  4.03%  16.3731s  |   _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE16_M_extract_floatES3_S3_RSt8ios_baseRSt12_Ios_IostateRSs
+  4.03%  16.3731s  |   | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  4.03%  16.3731s  |   |   _ZNSi10_M_extractIfEERSiRT_
+  4.03%  16.3731s  |   |     ???
+  4.03%  16.3731s  |   |       ???
+  0.51%  2.05944s  |   _ZNSi6sentryC1ERSib
+  0.51%  2.05944s  |     _ZNSi10_M_extractIfEERSiRT_
+  0.51%  2.05944s  |       ???
+  0.51%  2.05944s  |         ???
+  9.87%  40.0823s  ungetc
+  8.44%  34.2626s  | ???
+  8.44%  34.2626s  | | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE16_M_extract_floatES3_S3_RSt8ios_baseRSt12_Ios_IostateRSs
+  8.44%  34.2626s  | |   _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  8.44%  34.2626s  | |     _ZNSi10_M_extractIfEERSiRT_
+  8.44%  34.2626s  | |       ???
+  8.44%  34.2626s  | |         ???
+  0.97%  3.95495s  | _ZNSi6sentryC1ERSib
+  0.97%  3.95495s  | | _ZNSi10_M_extractIfEERSiRT_
+  0.97%  3.95495s  | |   ???
+  0.97%  3.95495s  | |     ???
+  0.46%  1.86477s  | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.46%  1.86477s  |   _ZNSi10_M_extractIfEERSiRT_
+  0.46%  1.86477s  |     ???
+  0.46%  1.86477s  |       ???
+  4.85%  19.6928s  cuDevicePrimaryCtxReset
+  4.85%  19.6928s  | ???
+  4.85%  19.6928s  |   ???
+  4.85%  19.6928s  |     cudaDeviceReset
+  4.85%  19.6928s  |       ???
+  4.85%  19.6928s  |         ???
+  4.85%  19.6928s  |           ???
+  4.85%  19.6928s  |             ???
+  4.05%  16.4551s  |               ???
+  4.54%   18.453s  cuDevicePrimaryCtxRetain
+  2.73%  11.0862s  | ???
+  2.73%  11.0862s  | | ???
+  2.73%  11.0862s  | |   ???
+  2.73%  11.0862s  | |     ???
+  2.73%  11.0862s  | |       ???
+  2.67%    10.83s  | |         cudaMalloc
+  2.67%    10.83s  | |         | ???
+  2.67%    10.83s  | |         |   ???
+  2.67%    10.83s  | |         |     ???
+  2.67%    10.83s  | |         |       ???
+  1.75%  7.10047s  | |         |         ???
+  0.06%  256.15ms  | |         ???
+  0.06%  256.15ms  | |           cudaMalloc
+  0.06%  256.15ms  | |             ???
+  0.06%  256.15ms  | |               ???
+  0.06%  256.15ms  | |                 ???
+  0.06%  256.15ms  | |                   ???
+  0.06%  256.15ms  | |                     ???
+  1.81%  7.36687s  | ???
+  1.81%  7.36687s  |   ???
+  1.81%  7.36687s  |     ???
+  1.81%  7.36687s  |       ???
+  1.81%  7.36687s  |         ???
+  1.81%  7.36687s  |           ???
+  1.81%  7.36687s  |             ???
+  1.81%  7.36687s  |               cusolverDnCreate
+  1.81%  7.36687s  |                 ???
+  1.81%  7.36687s  |                   ???
+  1.81%  7.36687s  |                     ???
+  1.81%  7.36687s  |                       ???
+  1.81%  7.36687s  |                         ???
+  1.70%   6.9058s  ???
+  1.21%  4.92832s  | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE16_M_extract_floatES3_S3_RSt8ios_baseRSt12_Ios_IostateRSs
+  1.21%  4.92832s  | | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  1.21%  4.92832s  | |   _ZNSi10_M_extractIfEERSiRT_
+  1.21%  4.92832s  | |     ???
+  1.21%  4.92832s  | |       ???
+  0.25%  1.01435s  | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.25%  1.01435s  | | _ZNSi10_M_extractIfEERSiRT_
+  0.25%  1.01435s  | |   ???
+  0.25%  1.01435s  | |     ???
+  0.09%  358.61ms  | __gnu_cxx::stdio_sync_filebuf<char, void std::char_traits<char>()>::uflow
+  0.09%  358.61ms  | | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE16_M_extract_floatES3_S3_RSt8ios_baseRSt12_Ios_IostateRSs
+  0.09%  358.61ms  | |   _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.09%  358.61ms  | |     _ZNSi10_M_extractIfEERSiRT_
+  0.09%  358.61ms  | |       ???
+  0.09%  358.61ms  | |         ???
+  0.09%  348.36ms  | __gnu_cxx::stdio_sync_filebuf<char, void std::char_traits<char>()>::underflow
+  0.08%  317.63ms  | | ???
+  0.08%  317.63ms  | | | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE16_M_extract_floatES3_S3_RSt8ios_baseRSt12_Ios_IostateRSs
+  0.08%  317.63ms  | | |   _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.08%  317.63ms  | | |     _ZNSi10_M_extractIfEERSiRT_
+  0.08%  317.63ms  | | |       ???
+  0.08%  317.63ms  | | |         ???
+  0.01%  30.738ms  | | _ZNSi6sentryC1ERSib
+  0.01%  30.738ms  | |   _ZNSi10_M_extractIfEERSiRT_
+  0.01%  30.738ms  | |     ???
+  0.01%  30.738ms  | |       ???
+  0.02%  61.476ms  | _ZNSi10_M_extractIfEERSiRT_
+  0.02%  61.476ms  | | ???
+  0.02%  61.476ms  | |   ???
+  0.01%   51.23ms  | _ZNSs7reserveEm
+  0.01%   51.23ms  | | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.01%   51.23ms  | |   _ZNSi10_M_extractIfEERSiRT_
+  0.01%   51.23ms  | |     ???
+  0.01%   51.23ms  | |       ???
+  0.01%  40.984ms  | ???
+  0.01%  40.984ms  | | ???
+  0.01%  40.984ms  | __operator_new__(unsigned long)
+  0.01%  40.984ms  | | _ZNSs4_Rep9_S_createEmmRKSaIcE
+  0.01%  40.984ms  | |   _ZNSs4_Rep8_M_cloneERKSaIcEm
+  0.01%  40.984ms  | |     _ZNSs7reserveEm
+  0.01%  40.984ms  | |       _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.01%  40.984ms  | |         _ZNSi10_M_extractIfEERSiRT_
+  0.01%  40.984ms  | |           ???
+  0.01%  40.984ms  | |             ???
+  0.01%  40.984ms  | _ZNSs4_Rep9_S_createEmmRKSaIcE
+  0.01%  40.984ms  | | _ZNSs4_Rep8_M_cloneERKSaIcEm
+  0.01%  40.984ms  | |   _ZNSs7reserveEm
+  0.01%  40.984ms  | |     _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.01%  40.984ms  | |       _ZNSi10_M_extractIfEERSiRT_
+  0.01%  40.984ms  | |         ???
+  0.01%  40.984ms  | |           ???
+  0.01%  20.492ms  | std::locale::facet::_S_get_c_locale(void)
+  0.01%  20.492ms  |   _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.01%  20.492ms  |     _ZNSi10_M_extractIfEERSiRT_
+  0.01%  20.492ms  |       ???
+  0.01%  20.492ms  |         ???
+  0.96%  3.91397s  _IO_sputbackc
+  0.96%  3.91397s  | ungetc
+  0.83%  3.38118s  |   ???
+  0.83%  3.38118s  |   | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE16_M_extract_floatES3_S3_RSt8ios_baseRSt12_Ios_IostateRSs
+  0.83%  3.38118s  |   |   _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.83%  3.38118s  |   |     _ZNSi10_M_extractIfEERSiRT_
+  0.83%  3.38118s  |   |       ???
+  0.83%  3.38118s  |   |         ???
+  0.09%  348.36ms  |   _ZNSi6sentryC1ERSib
+  0.09%  348.36ms  |   | _ZNSi10_M_extractIfEERSiRT_
+  0.09%  348.36ms  |   |   ???
+  0.09%  348.36ms  |   |     ???
+  0.05%  184.43ms  |   _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.05%  184.43ms  |     _ZNSi10_M_extractIfEERSiRT_
+  0.05%  184.43ms  |       ???
+  0.05%  184.43ms  |         ???
+  0.89%  3.61683s  _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE16_M_extract_floatES3_S3_RSt8ios_baseRSt12_Ios_IostateRSs
+  0.89%  3.61683s  | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.89%  3.61683s  |   _ZNSi10_M_extractIfEERSiRT_
+  0.89%  3.61683s  |     ???
+  0.89%  3.61683s  |       ???
+  0.89%  3.59634s  ???
+  0.72%  2.92011s  | void std::__convert_to_v<float>(char const *, float&, std::_Ios_Iostate&, __locale_struct* const &)
+  0.72%  2.92011s  | | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.72%  2.92011s  | |   _ZNSi10_M_extractIfEERSiRT_
+  0.72%  2.92011s  | |     ???
+  0.72%  2.92011s  | |       ???
+  0.12%  502.05ms  | ???
+  0.12%  481.56ms  | | void std::__convert_to_v<float>(char const *, float&, std::_Ios_Iostate&, __locale_struct* const &)
+  0.12%  481.56ms  | | | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.12%  481.56ms  | | |   _ZNSi10_M_extractIfEERSiRT_
+  0.12%  481.56ms  | | |     ???
+  0.12%  481.56ms  | | |       ???
+  0.01%  20.492ms  | | ???
+  0.01%  20.492ms  | |   void std::__convert_to_v<float>(char const *, float&, std::_Ios_Iostate&, __locale_struct* const &)
+  0.01%  20.492ms  | |     _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.01%  20.492ms  | |       _ZNSi10_M_extractIfEERSiRT_
+  0.01%  20.492ms  | |         ???
+  0.01%  20.492ms  | |           ???
+  0.03%  122.95ms  | malloc
+  0.02%  71.722ms  | | ???
+  0.02%  71.722ms  | | | ???
+  0.01%   51.23ms  | | |   ???
+  0.01%   51.23ms  | | |   | ???
+  0.01%   51.23ms  | | |   |   ???
+  0.01%   51.23ms  | | |   |     ???
+  0.01%   51.23ms  | | |   |       ???
+  0.01%   51.23ms  | | |   |         ???
+  0.01%   51.23ms  | | |   |           cublasCreate_v2
+  0.01%   51.23ms  | | |   |             ???
+  0.01%   51.23ms  | | |   |               ???
+  0.01%   51.23ms  | | |   |                 ???
+  0.01%   51.23ms  | | |   |                   ???
+  0.01%  40.984ms  | | |   |                     ???
+  0.01%  20.492ms  | | |   cublasCreate_v2
+  0.01%  20.492ms  | | |     ???
+  0.01%  20.492ms  | | |       ???
+  0.01%  20.492ms  | | |         ???
+  0.01%  20.492ms  | | |           ???
+  0.01%  20.492ms  | | |             ???
+  0.01%  40.984ms  | | ???
+  0.01%  40.984ms  | | | ???
+  0.01%  40.984ms  | | |   ???
+  0.01%  30.738ms  | | |     ???
+  0.01%  30.738ms  | | |     | ???
+  0.01%  30.738ms  | | |     |   ???
+  0.01%  30.738ms  | | |     |     ???
+  0.01%  30.738ms  | | |     |       ???
+  0.01%  30.738ms  | | |     |         ???
+  0.01%  30.738ms  | | |     |           cusolverDnCreate
+  0.01%  30.738ms  | | |     |             ???
+  0.01%  30.738ms  | | |     |               ???
+  0.01%  30.738ms  | | |     |                 ???
+  0.01%  30.738ms  | | |     |                   ???
+  0.01%  30.738ms  | | |     |                     ???
+  0.00%  10.246ms  | | |     cusolverDnCreate
+  0.00%  10.246ms  | | |       ???
+  0.00%  10.246ms  | | |         ???
+  0.00%  10.246ms  | | |           ???
+  0.00%  10.246ms  | | |             ???
+  0.00%  10.246ms  | | |               ???
+  0.00%  10.246ms  | | ???
+  0.00%  10.246ms  | |   ???
+  0.00%  10.246ms  | |     ???
+  0.00%  10.246ms  | |       ???
+  0.01%  20.492ms  | ???
+  0.01%  20.492ms  | | ???
+  0.01%  20.492ms  | |   ???
+  0.01%  20.492ms  | |     ???
+  0.01%  20.492ms  | |       ???
+  0.01%  20.492ms  | |         ???
+  0.01%  20.492ms  | |           ???
+  0.01%  20.492ms  | |             ???
+  0.01%  20.492ms  | |               cublasCreate_v2
+  0.01%  20.492ms  | |                 ???
+  0.01%  20.492ms  | |                   ???
+  0.01%  20.492ms  | |                     ???
+  0.01%  20.492ms  | |                       ???
+  0.00%  10.246ms  | |                         ???
+  0.00%  10.246ms  | calloc
+  0.00%  10.246ms  | | ???
+  0.00%  10.246ms  | |   ???
+  0.00%  10.246ms  | |     ???
+  0.00%  10.246ms  | |       ???
+  0.00%  10.246ms  | |         ???
+  0.00%  10.246ms  | |           ???
+  0.00%  10.246ms  | |             ???
+  0.00%  10.246ms  | |               ???
+  0.00%  10.246ms  | |                 ???
+  0.00%  10.246ms  | |                   cusolverDnCreate
+  0.00%  10.246ms  | |                     ???
+  0.00%  10.246ms  | |                       ???
+  0.00%  10.246ms  | |                         ???
+  0.00%  10.246ms  | |                           ???
+  0.00%  10.246ms  | |                             ???
+  0.00%  10.246ms  | free
+  0.00%  10.246ms  | | ???
+  0.00%  10.246ms  | |   cusolverDnDestroy
+  0.00%  10.246ms  | |     ???
+  0.00%  10.246ms  | |       ???
+  0.00%  10.246ms  | |         ???
+  0.00%  10.246ms  | |           ???
+  0.00%  10.246ms  | |             ???
+  0.00%  10.246ms  | cublasCreate_v2
+  0.00%  10.246ms  |   ???
+  0.00%  10.246ms  |     ???
+  0.00%  10.246ms  |       ???
+  0.00%  10.246ms  |         ???
+  0.00%  10.246ms  |           ???
+  0.54%  2.20289s  _ZNSs9push_backEc
+  0.54%  2.20289s  | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE16_M_extract_floatES3_S3_RSt8ios_baseRSt12_Ios_IostateRSs
+  0.54%  2.20289s  |   _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.54%  2.20289s  |     _ZNSi10_M_extractIfEERSiRT_
+  0.54%  2.20289s  |       ???
+  0.54%  2.20289s  |         ???
+  0.51%  2.07994s  __gnu_cxx::stdio_sync_filebuf<char, void std::char_traits<char>()>::underflow
+  0.45%  1.81354s  | ???
+  0.45%  1.81354s  | | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE16_M_extract_floatES3_S3_RSt8ios_baseRSt12_Ios_IostateRSs
+  0.45%  1.81354s  | |   _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.45%  1.81354s  | |     _ZNSi10_M_extractIfEERSiRT_
+  0.45%  1.81354s  | |       ???
+  0.45%  1.81354s  | |         ???
+  0.05%  204.92ms  | _ZNSi6sentryC1ERSib
+  0.05%  204.92ms  | | _ZNSi10_M_extractIfEERSiRT_
+  0.05%  204.92ms  | |   ???
+  0.05%  204.92ms  | |     ???
+  0.02%  61.476ms  | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.02%  61.476ms  |   _ZNSi10_M_extractIfEERSiRT_
+  0.02%  61.476ms  |     ???
+  0.02%  61.476ms  |       ???
+  0.49%  2.00821s  _IO_fflush
+  0.49%  2.00821s  | _ZNSo5flushEv
+  0.49%  2.00821s  |   _ZNSi6sentryC1ERSib
+  0.49%  2.00821s  |     _ZNSi10_M_extractIfEERSiRT_
+  0.49%  2.00821s  |       ???
+  0.49%  2.00821s  |         ???
+  0.39%  1.56764s  cuMemcpyHtoD_v2
+  0.39%  1.56764s  | ???
+  0.39%  1.56764s  |   ???
+  0.39%  1.56764s  |     cudaMemcpy
+  0.39%  1.56764s  |       ???
+  0.39%  1.56764s  |         ???
+  0.39%  1.56764s  |           ???
+  0.39%  1.56764s  |             ???
+  0.39%  1.56764s  |               ???
+  0.30%  1.19878s  cuCtxSynchronize
+  0.30%  1.19878s  | ???
+  0.30%  1.19878s  |   cudaDeviceSynchronize
+  0.30%  1.19878s  |     ???
+  0.30%  1.19878s  |       ???
+  0.30%  1.19878s  |         ???
+  0.30%  1.19878s  |           ???
+  0.30%  1.19878s  |             ???
+  0.27%  1.10657s  _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.27%  1.10657s  | _ZNSi10_M_extractIfEERSiRT_
+  0.27%  1.10657s  |   ???
+  0.27%  1.10657s  |     ???
+  0.21%  840.17ms  __gnu_cxx::stdio_sync_filebuf<char, void std::char_traits<char>()>::uflow
+  0.18%  727.47ms  | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE16_M_extract_floatES3_S3_RSt8ios_baseRSt12_Ios_IostateRSs
+  0.18%  727.47ms  | | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.18%  727.47ms  | |   _ZNSi10_M_extractIfEERSiRT_
+  0.18%  727.47ms  | |     ???
+  0.18%  727.47ms  | |       ???
+  0.03%  112.71ms  | _ZNSi6sentryC1ERSib
+  0.03%  112.71ms  |   _ZNSi10_M_extractIfEERSiRT_
+  0.03%  112.71ms  |     ???
+  0.03%  112.71ms  |       ???
+  0.19%  768.45ms  _ZNSi6sentryC1ERSib
+  0.19%  768.45ms  | _ZNSi10_M_extractIfEERSiRT_
+  0.19%  768.45ms  |   ???
+  0.19%  768.45ms  |     ???
+  0.18%  737.71ms  void std::__convert_to_v<float>(char const *, float&, std::_Ios_Iostate&, __locale_struct* const &)
+  0.18%  737.71ms  | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.18%  737.71ms  |   _ZNSi10_M_extractIfEERSiRT_
+  0.18%  737.71ms  |     ???
+  0.18%  737.71ms  |       ???
+  0.15%  625.01ms  cuModuleGetFunction
+  0.10%  409.84ms  | ???
+  0.10%  409.84ms  | | ???
+  0.10%  409.84ms  | |   ???
+  0.10%  409.84ms  | |     ???
+  0.10%  409.84ms  | |       ???
+  0.10%  409.84ms  | |         ???
+  0.10%  409.84ms  | |           ???
+  0.10%  409.84ms  | |             ???
+  0.10%  409.84ms  | |               cublasCreate_v2
+  0.10%  409.84ms  | |                 ???
+  0.10%  409.84ms  | |                   ???
+  0.10%  409.84ms  | |                     ???
+  0.10%  409.84ms  | |                       ???
+  0.09%  348.36ms  | |                         ???
+  0.05%  215.17ms  | ???
+  0.05%  215.17ms  |   ???
+  0.05%  215.17ms  |     ???
+  0.05%  215.17ms  |       ???
+  0.05%  215.17ms  |         ???
+  0.05%  215.17ms  |           ???
+  0.05%  215.17ms  |             ???
+  0.05%  215.17ms  |               ???
+  0.05%  215.17ms  |                 ???
+  0.05%  215.17ms  |                   cusolverDnCreate
+  0.05%  215.17ms  |                     ???
+  0.05%  215.17ms  |                       ???
+  0.05%  215.17ms  |                         ???
+  0.05%  215.17ms  |                           ???
+  0.05%  215.17ms  |                             ???
+  0.15%  604.51ms  malloc
+  0.13%  543.04ms  | __operator_new__(unsigned long)
+  0.13%  543.04ms  | | _ZNSs4_Rep9_S_createEmmRKSaIcE
+  0.13%  543.04ms  | |   _ZNSs4_Rep8_M_cloneERKSaIcEm
+  0.13%  543.04ms  | |     _ZNSs7reserveEm
+  0.13%  543.04ms  | |       _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.13%  543.04ms  | |         _ZNSi10_M_extractIfEERSiRT_
+  0.13%  543.04ms  | |           ???
+  0.13%  543.04ms  | |             ???
+  0.01%  40.984ms  | ???
+  0.01%  40.984ms  | | ???
+  0.01%  30.738ms  | |   ???
+  0.01%  30.738ms  | |   | ???
+  0.01%  30.738ms  | |   |   ???
+  0.01%  30.738ms  | |   |     ???
+  0.01%  30.738ms  | |   |       ???
+  0.01%  30.738ms  | |   |         ???
+  0.01%  30.738ms  | |   |           cublasCreate_v2
+  0.01%  30.738ms  | |   |             ???
+  0.01%  30.738ms  | |   |               ???
+  0.01%  30.738ms  | |   |                 ???
+  0.01%  30.738ms  | |   |                   ???
+  0.01%  30.738ms  | |   |                     ???
+  0.00%  10.246ms  | |   cublasCreate_v2
+  0.00%  10.246ms  | |     ???
+  0.00%  10.246ms  | |       ???
+  0.00%  10.246ms  | |         ???
+  0.00%  10.246ms  | |           ???
+  0.01%  20.492ms  | ???
+  0.01%  20.492ms  |   ???
+  0.01%  20.492ms  |     ???
+  0.01%  20.492ms  |       ???
+  0.01%  20.492ms  |         ???
+  0.01%  20.492ms  |           ???
+  0.01%  20.492ms  |             ???
+  0.01%  20.492ms  |               ???
+  0.01%  20.492ms  |                 ???
+  0.01%  20.492ms  |                   cusolverDnCreate
+  0.01%  20.492ms  |                     ???
+  0.01%  20.492ms  |                       ???
+  0.01%  20.492ms  |                         ???
+  0.01%  20.492ms  |                           ???
+  0.01%  20.492ms  |                             ???
+  0.13%  522.55ms  read
+  0.13%  522.55ms  | _IO_file_underflow
+  0.13%  522.55ms  |   _IO_default_uflow
+  0.13%  522.55ms  |     _IO_getc
+  0.13%  522.55ms  |       __gnu_cxx::stdio_sync_filebuf<char, void std::char_traits<char>()>::underflow
+  0.12%  471.32ms  |         ???
+  0.12%  471.32ms  |         | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE16_M_extract_floatES3_S3_RSt8ios_baseRSt12_Ios_IostateRSs
+  0.12%  471.32ms  |         |   _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.12%  471.32ms  |         |     _ZNSi10_M_extractIfEERSiRT_
+  0.12%  471.32ms  |         |       ???
+  0.12%  471.32ms  |         |         ???
+  0.01%   51.23ms  |         _ZNSi6sentryC1ERSib
+  0.01%   51.23ms  |           _ZNSi10_M_extractIfEERSiRT_
+  0.01%   51.23ms  |             ???
+  0.01%   51.23ms  |               ???
+  0.12%  502.05ms  free
+  0.12%  491.81ms  | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.12%  491.81ms  | | _ZNSi10_M_extractIfEERSiRT_
+  0.12%  491.81ms  | |   ???
+  0.12%  491.81ms  | |     ???
+  0.00%  10.246ms  | ???
+  0.00%  10.246ms  |   ???
+  0.00%  10.246ms  |     ???
+  0.00%  10.246ms  |       ???
+  0.00%  10.246ms  |         ???
+  0.00%  10.246ms  |           ???
+  0.00%  10.246ms  |             ???
+  0.00%  10.246ms  |               ???
+  0.00%  10.246ms  |                 ???
+  0.00%  10.246ms  |                   cusolverDnCreate
+  0.00%  10.246ms  |                     ???
+  0.00%  10.246ms  |                       ???
+  0.00%  10.246ms  |                         ???
+  0.00%  10.246ms  |                           ???
+  0.00%  10.246ms  |                             ???
+  0.12%  502.05ms  cuMemFree_v2
+  0.06%  235.66ms  | ???
+  0.06%  235.66ms  | | cudaFree
+  0.06%  235.66ms  | |   ???
+  0.06%  235.66ms  | |     ???
+  0.06%  235.66ms  | |       ???
+  0.06%  235.66ms  | |         ???
+  0.06%  225.41ms  | |           ???
+  0.06%  235.66ms  | ???
+  0.06%  235.66ms  | | ???
+  0.06%  235.66ms  | |   cublasDestroy_v2
+  0.06%  235.66ms  | |     ???
+  0.06%  235.66ms  | |       ???
+  0.06%  235.66ms  | |         ???
+  0.06%  235.66ms  | |           ???
+  0.06%  225.41ms  | |             ???
+  0.01%  30.738ms  | ???
+  0.01%  30.738ms  |   ???
+  0.01%  30.738ms  |     ???
+  0.01%  30.738ms  |       cusolverDnDestroy
+  0.01%  30.738ms  |         ???
+  0.01%  30.738ms  |           ???
+  0.01%  30.738ms  |             ???
+  0.01%  30.738ms  |               ???
+  0.01%  30.738ms  |                 ???
+  0.12%  471.32ms  _ZNSi10_M_extractIfEERSiRT_
+  0.12%  471.32ms  | ???
+  0.12%  471.32ms  |   ???
+  0.11%  430.33ms  cuMemcpyDtoH_v2
+  0.11%  430.33ms  | ???
+  0.11%  430.33ms  |   ???
+  0.11%  430.33ms  |     cudaMemcpy
+  0.11%  430.33ms  |       ???
+  0.11%  430.33ms  |         ???
+  0.11%  430.33ms  |           ???
+  0.11%  430.33ms  |             ???
+  0.11%  430.33ms  |               ???
+  0.08%  327.87ms  _ZNSs7reserveEm
+  0.08%  327.87ms  | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.08%  327.87ms  |   _ZNSi10_M_extractIfEERSiRT_
+  0.08%  327.87ms  |     ???
+  0.08%  327.87ms  |       ???
+  0.06%   245.9ms  ???
+  0.06%   245.9ms  | ???
+  0.06%  235.66ms  |   ???
+  0.06%  235.66ms  |   | ???
+  0.06%  235.66ms  |   |   ???
+  0.06%  225.41ms  |   |     ???
+  0.06%  225.41ms  |   |     | ???
+  0.05%  194.67ms  |   |     |   ???
+  0.05%  184.43ms  |   |     |   | cublasCreate_v2
+  0.05%  184.43ms  |   |     |   | | ???
+  0.05%  184.43ms  |   |     |   | |   ???
+  0.05%  184.43ms  |   |     |   | |     ???
+  0.05%  184.43ms  |   |     |   | |       ???
+  0.04%  143.44ms  |   |     |   | |         ???
+  0.00%  10.246ms  |   |     |   | ???
+  0.00%  10.246ms  |   |     |   |   cublasCreate_v2
+  0.00%  10.246ms  |   |     |   |     ???
+  0.00%  10.246ms  |   |     |   |       ???
+  0.00%  10.246ms  |   |     |   |         ???
+  0.00%  10.246ms  |   |     |   |           ???
+  0.00%  10.246ms  |   |     |   |             ???
+  0.01%  30.738ms  |   |     |   cublasCreate_v2
+  0.01%  30.738ms  |   |     |     ???
+  0.01%  30.738ms  |   |     |       ???
+  0.01%  30.738ms  |   |     |         ???
+  0.01%  30.738ms  |   |     |           ???
+  0.01%  30.738ms  |   |     |             ???
+  0.00%  10.246ms  |   |     cublasCreate_v2
+  0.00%  10.246ms  |   |       ???
+  0.00%  10.246ms  |   |         ???
+  0.00%  10.246ms  |   |           ???
+  0.00%  10.246ms  |   |             ???
+  0.00%  10.246ms  |   |               ???
+  0.00%  10.246ms  |   cublasCreate_v2
+  0.00%  10.246ms  |     ???
+  0.00%  10.246ms  |       ???
+  0.00%  10.246ms  |         ???
+  0.00%  10.246ms  |           ???
+  0.00%  10.246ms  |             ???
+  0.06%  235.66ms  _ZNSs4_Rep8_M_cloneERKSaIcEm
+  0.06%  235.66ms  | _ZNSs7reserveEm
+  0.06%  235.66ms  |   _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.06%  235.66ms  |     _ZNSi10_M_extractIfEERSiRT_
+  0.06%  235.66ms  |       ???
+  0.06%  235.66ms  |         ???
+  0.06%  235.66ms  cuInit
+  0.06%  235.66ms  | ???
+  0.06%  235.66ms  |   ???
+  0.06%  235.66ms  |     __pthread_once_slow
+  0.06%  235.66ms  |       ???
+  0.06%  235.66ms  |         ???
+  0.06%  235.66ms  |           ???
+  0.06%  235.66ms  |             cudaMalloc
+  0.06%  235.66ms  |               ???
+  0.06%  235.66ms  |                 ???
+  0.06%  235.66ms  |                   ???
+  0.06%  235.66ms  |                     ???
+  0.06%  235.66ms  |                       ???
+  0.06%  225.41ms  ???
+  0.06%  225.41ms  | ???
+  0.05%  184.43ms  _ZNSs4_Rep9_S_createEmmRKSaIcE
+  0.05%  184.43ms  | _ZNSs4_Rep8_M_cloneERKSaIcEm
+  0.05%  184.43ms  |   _ZNSs7reserveEm
+  0.05%  184.43ms  |     _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.05%  184.43ms  |       _ZNSi10_M_extractIfEERSiRT_
+  0.05%  184.43ms  |         ???
+  0.05%  184.43ms  |           ???
+  0.04%  143.44ms  _ZNSo5flushEv
+  0.04%  143.44ms  | _ZNSi6sentryC1ERSib
+  0.04%  143.44ms  |   _ZNSi10_M_extractIfEERSiRT_
+  0.04%  143.44ms  |     ???
+  0.04%  143.44ms  |       ???
+  0.03%  122.95ms  _IO_file_sync
+  0.03%  122.95ms  | _IO_fflush
+  0.03%  122.95ms  |   _ZNSo5flushEv
+  0.03%  122.95ms  |     _ZNSi6sentryC1ERSib
+  0.03%  122.95ms  |       _ZNSi10_M_extractIfEERSiRT_
+  0.03%  122.95ms  |         ???
+  0.03%  122.95ms  |           ???
+  0.02%  92.214ms  __operator_new__(unsigned long)
+  0.02%  92.214ms  | _ZNSs4_Rep9_S_createEmmRKSaIcE
+  0.02%  92.214ms  |   _ZNSs4_Rep8_M_cloneERKSaIcEm
+  0.02%  92.214ms  |     _ZNSs7reserveEm
+  0.02%  92.214ms  |       _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.02%  92.214ms  |         _ZNSi10_M_extractIfEERSiRT_
+  0.02%  92.214ms  |           ???
+  0.02%  92.214ms  |             ???
+  0.02%  71.722ms  cuMemAlloc_v2
+  0.01%  40.984ms  | ???
+  0.01%  40.984ms  | | ???
+  0.01%  40.984ms  | |   cudaMalloc
+  0.01%  40.984ms  | |     ???
+  0.01%  40.984ms  | |       ???
+  0.01%  40.984ms  | |         ???
+  0.01%  40.984ms  | |           ???
+  0.01%  40.984ms  | |             ???
+  0.01%  20.492ms  | ???
+  0.01%  20.492ms  | | ???
+  0.01%  20.492ms  | |   ???
+  0.01%  20.492ms  | |     ???
+  0.00%  10.246ms  | |       cusolverDnCreate
+  0.00%  10.246ms  | |       | ???
+  0.00%  10.246ms  | |       |   ???
+  0.00%  10.246ms  | |       |     ???
+  0.00%  10.246ms  | |       |       ???
+  0.00%  10.246ms  | |       |         ???
+  0.00%  10.246ms  | |       ???
+  0.00%  10.246ms  | |         cusolverDnCreate
+  0.00%  10.246ms  | |           ???
+  0.00%  10.246ms  | |             ???
+  0.00%  10.246ms  | |               ???
+  0.00%  10.246ms  | |                 ???
+  0.00%  10.246ms  | |                   ???
+  0.00%  10.246ms  | ???
+  0.00%  10.246ms  |   ???
+  0.00%  10.246ms  |     ???
+  0.00%  10.246ms  |       cublasCreate_v2
+  0.00%  10.246ms  |         ???
+  0.00%  10.246ms  |           ???
+  0.00%  10.246ms  |             ???
+  0.00%  10.246ms  |               ???
+  0.00%  10.246ms  |                 ???
+  0.02%  71.722ms  ???
+  0.02%  71.722ms  | ???
+  0.02%  71.722ms  |   ???
+  0.02%  71.722ms  |     ???
+  0.02%  71.722ms  |       ???
+  0.02%  71.722ms  |         ???
+  0.02%  71.722ms  |           ???
+  0.02%  61.476ms  |             ???
+  0.02%  61.476ms  |             | ???
+  0.02%  61.476ms  |             |   cusolverDnCreate
+  0.02%  61.476ms  |             |     ???
+  0.02%  61.476ms  |             |       ???
+  0.02%  61.476ms  |             |         ???
+  0.02%  61.476ms  |             |           ???
+  0.02%  61.476ms  |             |             ???
+  0.00%  10.246ms  |             cusolverDnCreate
+  0.00%  10.246ms  |               ???
+  0.00%  10.246ms  |                 ???
+  0.00%  10.246ms  |                   ???
+  0.00%  10.246ms  |                     ???
+  0.00%  10.246ms  |                       ???
+  0.02%  71.722ms  _ZNKSt6locale2id5_M_idEv
+  0.02%  71.722ms  | ???
+  0.02%  71.722ms  |   _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE16_M_extract_floatES3_S3_RSt8ios_baseRSt12_Ios_IostateRSs
+  0.02%  71.722ms  |     _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.02%  71.722ms  |       _ZNSi10_M_extractIfEERSiRT_
+  0.02%  71.722ms  |         ???
+  0.02%  71.722ms  |           ???
+  0.02%  61.476ms  cuLaunchKernel
+  0.01%   51.23ms  | ???
+  0.01%   51.23ms  | | ???
+  0.01%   51.23ms  | |   ???
+  0.01%   51.23ms  | |     ???
+  0.01%   51.23ms  | |       ???
+  0.01%  40.984ms  | |         ???
+  0.01%  20.492ms  | |         | ???
+  0.00%  10.246ms  | |         | | ???
+  0.00%  10.246ms  | |         | | | ???
+  0.00%  10.246ms  | |         | | |   ???
+  0.00%  10.246ms  | |         | | |     ???
+  0.00%  10.246ms  | |         | | |       ???
+  0.00%  10.246ms  | |         | | |         ???
+  0.00%  10.246ms  | |         | | |           ???
+  0.00%  10.246ms  | |         | | ???
+  0.00%  10.246ms  | |         | |   ???
+  0.00%  10.246ms  | |         | |     ???
+  0.00%  10.246ms  | |         | |       ???
+  0.00%  10.246ms  | |         | |         ???
+  0.01%  20.492ms  | |         | ???
+  0.01%  20.492ms  | |         |   ???
+  0.01%  20.492ms  | |         |     ???
+  0.01%  20.492ms  | |         |       ???
+  0.01%  20.492ms  | |         |         ???
+  0.00%  10.246ms  | |         ???
+  0.00%  10.246ms  | |           ???
+  0.00%  10.246ms  | |             ???
+  0.00%  10.246ms  | |               ???
+  0.00%  10.246ms  | |                 ???
+  0.00%  10.246ms  | ???
+  0.00%  10.246ms  |   ???
+  0.00%  10.246ms  |     ???
+  0.00%  10.246ms  |       ???
+  0.00%  10.246ms  |         ???
+  0.00%  10.246ms  |           ???
+  0.00%  10.246ms  |             cublasSgemmStridedBatched
+  0.00%  10.246ms  |               ???
+  0.00%  10.246ms  |                 ???
+  0.00%  10.246ms  |                   ???
+  0.00%  10.246ms  |                     ???
+  0.00%  10.246ms  |                       ???
+  0.02%  61.476ms  std::locale::facet::_S_get_c_locale(void)
+  0.02%  61.476ms  | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.02%  61.476ms  |   _ZNSi10_M_extractIfEERSiRT_
+  0.02%  61.476ms  |     ???
+  0.02%  61.476ms  |       ???
+  0.01%   51.23ms  __pthread_once
+  0.01%   51.23ms  | std::locale::facet::_S_get_c_locale(void)
+  0.01%   51.23ms  |   _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.01%   51.23ms  |     _ZNSi10_M_extractIfEERSiRT_
+  0.01%   51.23ms  |       ???
+  0.01%   51.23ms  |         ???
+  0.01%   51.23ms  __strtof_l
+  0.01%   51.23ms  | void std::__convert_to_v<float>(char const *, float&, std::_Ios_Iostate&, __locale_struct* const &)
+  0.01%   51.23ms  |   _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.01%   51.23ms  |     _ZNSi10_M_extractIfEERSiRT_
+  0.01%   51.23ms  |       ???
+  0.01%   51.23ms  |         ???
+  0.01%   51.23ms  _ZNSs4_Rep10_M_destroyERKSaIcE
+  0.01%   51.23ms  | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.01%   51.23ms  |   _ZNSi10_M_extractIfEERSiRT_
+  0.01%   51.23ms  |     ???
+  0.01%   51.23ms  |       ???
+  0.01%   51.23ms  __gnu_cxx::stdio_sync_filebuf<char, void std::char_traits<char>()>::sync
+  0.01%   51.23ms  | _ZNSo5flushEv
+  0.01%   51.23ms  |   _ZNSi6sentryC1ERSib
+  0.01%   51.23ms  |     _ZNSi10_M_extractIfEERSiRT_
+  0.01%   51.23ms  |       ???
+  0.01%   51.23ms  |         ???
+  0.01%  40.984ms  __operator_delete__(void*)
+  0.01%  40.984ms  | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.01%  40.984ms  |   _ZNSi10_M_extractIfEERSiRT_
+  0.01%  40.984ms  |     ???
+  0.01%  40.984ms  |       ???
+  0.01%  40.984ms  _ZNSirsERf
+  0.01%  40.984ms  | ???
+  0.01%  40.984ms  |   ???
+  0.01%  20.492ms  cuEventCreate
+  0.01%  20.492ms  | ???
+  0.01%  20.492ms  |   ???
+  0.01%  20.492ms  |     ???
+  0.01%  20.492ms  |       ???
+  0.01%  20.492ms  |         cusolverDnCreate
+  0.01%  20.492ms  |           ???
+  0.01%  20.492ms  |             ???
+  0.01%  20.492ms  |               ???
+  0.01%  20.492ms  |                 ???
+  0.01%  20.492ms  |                   ???
+  0.01%  20.492ms  cuModuleGetTexRef
+  0.01%  20.492ms  | ???
+  0.01%  20.492ms  |   ???
+  0.01%  20.492ms  |     ???
+  0.01%  20.492ms  |       ???
+  0.01%  20.492ms  |         ???
+  0.01%  20.492ms  |           ???
+  0.01%  20.492ms  |             ???
+  0.01%  20.492ms  |               ???
+  0.01%  20.492ms  |                 ???
+  0.01%  20.492ms  |                   cusolverDnCreate
+  0.01%  20.492ms  |                     ???
+  0.01%  20.492ms  |                       ???
+  0.01%  20.492ms  |                         ???
+  0.01%  20.492ms  |                           ???
+  0.01%  20.492ms  |                             ???
+  0.01%  20.492ms  munmap
+  0.01%  20.492ms  | free
+  0.01%  20.492ms  |   ???
+  0.01%  20.492ms  |     ???
+  0.00%  10.246ms  |       ???
+  0.00%  10.246ms  |         ???
+  0.00%  10.246ms  cuCtxGetDevice
+  0.00%  10.246ms  | ???
+  0.00%  10.246ms  |   ???
+  0.00%  10.246ms  |     ???
+  0.00%  10.246ms  |       ???
+  0.00%  10.246ms  |         cudaMalloc
+  0.00%  10.246ms  |           ???
+  0.00%  10.246ms  |             ???
+  0.00%  10.246ms  |               ???
+  0.00%  10.246ms  |                 ???
+  0.00%  10.246ms  |                   ???
+  0.00%  10.246ms  cuDeviceGetName
+  0.00%  10.246ms  | ???
+  0.00%  10.246ms  |   ???
+  0.00%  10.246ms  |     ???
+  0.00%  10.246ms  |       cudaMalloc
+  0.00%  10.246ms  |         ???
+  0.00%  10.246ms  |           ???
+  0.00%  10.246ms  |             ???
+  0.00%  10.246ms  |               ???
+  0.00%  10.246ms  |                 ???
+  0.00%  10.246ms  pthread_mutex_unlock
+  0.00%  10.246ms    ???
+  0.00%  10.246ms      ???
+  0.00%  10.246ms        ???
+  0.00%  10.246ms          ???
+  0.00%  10.246ms            ???
+  0.00%  10.246ms              ???
+  0.00%  10.246ms                cublasCreate_v2
+  0.00%  10.246ms                  ???
+  0.00%  10.246ms                    ???
+  0.00%  10.246ms                      ???
+  0.00%  10.246ms                        ???
+  0.00%  10.246ms                          ???
+
+======== Data collected at 100Hz frequency

@@ -1,22 +1,16 @@
-function TS_example(DCTorFFt)
+function TStest(m, n, k, r)
     %% 构造人工数据
-    L = randn(40, 1, 6);
-    R = randn(1, 40, 6);
+    L = randn(m, r, k);
+    R = randn(r, n, k);
     X = tProd(L, R, true);
-    [~, r ,~] = size(L);
-    if strcmp(DCTorFFt, 'fft')
-        X = fft(X);
-    else
-        X = dct(X);
-    end
+    X = fft(X);
     % load('X_60_60_15_decorate.mat');
     % r = 1;
-    [m, n, k] = size(X);
     sz_X = [m, n, k];
     X_s = Tensor2SmallCircM(X);
     minSamplingRate = 20;
     minSamplingRate_copy = minSamplingRate;
-    maxSamplingRate = 20;
+    maxSamplingRate = 80;
     samplingNums = (maxSamplingRate - minSamplingRate)/5 + 1;
     error = zeros(samplingNums, 1);
     errot_index = 1;
@@ -43,15 +37,17 @@ function TS_example(DCTorFFt)
         A_all_t = A_all_t.';
         y = sparse(A_all*X_s(:));
 
+        t1 = clock;
         [RSE,error_single] = TS(X, X_s, A_all, A_all_t, y, iterationNums, r, minSamplingRate);    % 10为迭代次数，r为rank
+        t2 = clock;
+        t = etime(t2, t1);
+        fprintf('size[%d,%d, %d, %d] takes time %f\n', m, n, k, r, t);
         error_all(:, errot_index) = error_single;
         error(errot_index, 1) = RSE;
         minSamplingRate = minSamplingRate + 5;
         errot_index = errot_index  + 1;
     end
     %% 画误差曲线                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-    plotRSE(DCTorFFt, minSamplingRate_copy, maxSamplingRate, error');
-    plot_shou_lian_lv(DCTorFFt, iterationNums, error_all(:,13)');
 end
 
 

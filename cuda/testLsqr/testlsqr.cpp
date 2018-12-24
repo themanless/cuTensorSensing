@@ -1,4 +1,4 @@
-#include "lsqr.h"
+#include "../lsqr.h"
 #include <iostream>
 #include <stdio.h>
 #include <cstdlib>
@@ -14,7 +14,7 @@ void randInit(float* ar, int len){
 void printMatrix(float* ar, int row, int col){
     for (int i=0; i<row; i++){
         for (int j=0; j<col; j++){
-            cout << ar[i*col+j] << " ";
+            cout << ar[j*row+i] << " ";
         }
         cout << endl;
     }
@@ -32,8 +32,8 @@ int main(){
         cin >> b[i];
     cout << "A is \n";
     printMatrix(A, m, n);
-    printMatrix(b, m, 1);
     cout << "b is \n";
+    printMatrix(b, m, 1);
     lsqr(A, x, b, m, n);
     cout << "x is \n";
     printMatrix(x, n, 1);

@@ -1,6 +1,10 @@
-function TS_example(DCTorFFt)
+function TS2write(DCTorFFt)
     %% 构造人工数据
+    rng(42);
+    s=rng;
+    rng(s);
     L = randn(40, 1, 6);
+    rng(s);
     R = randn(1, 40, 6);
     X = tProd(L, R, true);
     [~, r ,~] = size(L);
@@ -14,9 +18,18 @@ function TS_example(DCTorFFt)
     [m, n, k] = size(X);
     sz_X = [m, n, k];
     X_s = Tensor2SmallCircM(X);
-    minSamplingRate = 20;
+    fid = fopen("X_A_Y.txt", 'w');
+    fprintf(fid, '%d %d %d %d %d %d', m, n, r, k, 7680, 20);
+    fprintf(fid, "X\n");
+    for i=1:n
+        for j=1:m*k
+            fprintf(fid, '%f ', X_s(j, i));
+        end
+        fprintf(fid, '\n');
+    end
+    minSamplingRate = 80;
     minSamplingRate_copy = minSamplingRate;
-    maxSamplingRate = 20;
+    maxSamplingRate = 80;
     samplingNums = (maxSamplingRate - minSamplingRate)/5 + 1;
     error = zeros(samplingNums, 1);
     errot_index = 1;
@@ -41,7 +54,28 @@ function TS_example(DCTorFFt)
         end
         A_all = A_all.';
         A_all_t = A_all_t.';
+        A_all = full(A_all);
+        A_all_t = full(A_all_t);
         y = sparse(A_all*X_s(:));
+        fprintf(fid, "A\n");
+        for i=1:m*n*k
+            for j= 1:nums
+                fprintf(fid, '%f ', A_all(j, i));
+            end
+            fprintf(fid, '\n');
+        end
+        fprintf(fid, "At\n");
+        for i=1:m*n*k
+            for j= 1:nums
+                fprintf(fid, '%f ', A_all_t(j, i));
+            end
+            fprintf(fid, '\n');
+        end
+        y = full(y);
+        fprintf(fid, "y\n");
+        for j= 1:nums
+            fprintf(fid, '%f ', y(j));
+        end
 
         [RSE,error_single] = TS(X, X_s, A_all, A_all_t, y, iterationNums, r, minSamplingRate);    % 10为迭代次数，r为rank
         error_all(:, errot_index) = error_single;
@@ -50,8 +84,8 @@ function TS_example(DCTorFFt)
         errot_index = errot_index  + 1;
     end
     %% 画误差曲线                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-    plotRSE(DCTorFFt, minSamplingRate_copy, maxSamplingRate, error');
-    plot_shou_lian_lv(DCTorFFt, iterationNums, error_all(:,13)');
+    %plotRSE(DCTorFFt, minSamplingRate_copy, maxSamplingRate, error');
+    %plot_shou_lian_lv(DCTorFFt, iterationNums, error_all(:,13)');
 end
 
 

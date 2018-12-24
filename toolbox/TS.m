@@ -1,24 +1,24 @@
 function [RSE,error]=TS(X, X_s, A_all, A_all_t, y, IterNum, r, SamplingRate)
 %% Simplified Alternating Minimization for tensor sensing
-% Problem state£ºmin|| b - <A,(U*V)> ||_F^2, s.t.:tubal-rank of U * V=r
-% Input : X = U * V  - ÀíÏëÊı¾İ£¬U:m * r * k,   V:r * n * k£¬    X£ºm * n * k
-%         A - ²ÉÑùtensor£¬Ã¿Ò»¸öÇ°ÇĞÃæA_i´óĞ¡Îªmk * n,Ã¿Ò»¸öA_iÓëX×öÄÚ»ı£¬ËùµÃµÄÊı×÷Îªy_i,1 <= i<= d
-%         IterNum - Ëã·¨µü´ú´ÎÊı
+% Problem stateï¼šmin|| b - <A,(U*V)> ||_F^2, s.t.:tubal-rank of U * V=r
+% Input : X = U * V  - ç†æƒ³æ•°æ®ï¼ŒU:m * r * k,   V:r * n * kï¼Œ    Xï¼šm * n * k
+%         A - é‡‡æ ·tensorï¼Œæ¯ä¸€ä¸ªå‰åˆ‡é¢A_iå¤§å°ä¸ºmk * n,æ¯ä¸€ä¸ªA_iä¸Xåšå†…ç§¯ï¼Œæ‰€å¾—çš„æ•°ä½œä¸ºy_i,1 <= i<= d
+%         IterNum - ç®—æ³•è¿­ä»£æ¬¡æ•°
 %         r - target tubal-rank
-% Output : U^c : mk * rk  -  X^sµÄ×ó½üËÆ·Ö½âÏî
-%          V^s : rk * n   -  X^sµÄÓÒ½üËÆ·Ö½âÏî
+% Output : U^c : mk * rk  -  X^sçš„å·¦è¿‘ä¼¼åˆ†è§£é¡¹
+%          V^s : rk * n   -  X^sçš„å³è¿‘ä¼¼åˆ†è§£é¡¹
 %          X^s : mk * n      X^s = U^c * V^s
 
-error = zeros(IterNum,1);      %Îó²îÊı×é
+error = zeros(IterNum,1);      %è¯¯å·®æ•°ç»„
 
 
-%% ³õÊ¼»¯ A2m U0
+%% åˆå§‹åŒ– A2m U0
 
 [m, n, k] = size(X);
 U0 = randn(m, r, k);
-U = Tensor2fullCircM(U0);     % U ³õÊ¼»¯Ê±»¯ÎªÑ­»·¾ØÕó
+U = Tensor2fullCircM(U0);     % U åˆå§‹åŒ–æ—¶åŒ–ä¸ºå¾ªç¯çŸ©é˜µ
 % parpool open;
-%% Ëã·¨µü´úÖ÷Ìå
+%% ç®—æ³•è¿­ä»£ä¸»ä½“
 for l = 1 : IterNum
     V = LS_V(A_all, U, r*k, y, n);
     U = LS_U(A_all_t, V, r*k, y, m*k);
@@ -28,14 +28,14 @@ for l = 1 : IterNum
     error(l,:) = RSE;
 end
 
-%% LSº¯Êı
+%% LSå‡½æ•°
     function [V] = LS_V(A2m, U, r, y, n)
-        U_ = mat2diaMat(U,n);         % ±àÅÅºóµÄ¾ØÕó U    
+        U_ = mat2diaMat(U,n);         % ç¼–æ’åçš„çŸ©é˜µ U    
         W = A2m*U_;
         V_ = W \ y ;
 %         V_ = lsqr(W, y, 1e-6, 100); 
         clear W;
-        V = Vec2Mat(V_,[r, n]);       % ½«µÃµ½µÄÏòÁ¿  V  ÖØĞÂ×ª»¯Îª¾ØÕó
+        V = Vec2Mat(V_,[r, n]);       % å°†å¾—åˆ°çš„å‘é‡  V  é‡æ–°è½¬åŒ–ä¸ºçŸ©é˜µ
      
     end
 
@@ -49,9 +49,3 @@ end
         U = (Vec2Mat(U_,[r, m])).';
     end
 end
-
-
-
-
-
-

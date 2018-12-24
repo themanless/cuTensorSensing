@@ -5,4 +5,4 @@
 #include <cstdlib>
 using namespace std;
 
-void cirMM(float* W, float* A, float* V, int M, int N, int K, int batch);
+void cuGemv(float* A, float* X, float* y, int m, int n);

@@ -1,4 +1,4 @@
-#include "cirMM.h"
+#include "../cirMM.h"
 #include <iostream>
 #include <cstdio>
 #include <cstdlib>
