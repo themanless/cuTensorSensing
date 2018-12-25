@@ -1,7 +1,7 @@
 cc = nvcc
 prom = finaltest
 link = -g -G -lcudart -lcublas -lcusolver
-src = ../cirMM.cu ../lsqr.cu initialY.cu finaltest.cpp
+src = warmup.cu ../cirMM.cu ../lsqr.cu initialY.cu finaltest.cpp
 
 $(prom): $(src)
 	$(cc) $(src) $(link) -o $(prom)

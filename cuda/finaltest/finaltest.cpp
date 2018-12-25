@@ -1,4 +1,5 @@
 #include <string>
+#include "warmup.h"
 #include "../cirMM.h"
 #include "../lsqr.h"
 #include "initialY.h"
@@ -305,6 +306,7 @@ void TS(float* X, float* A, float* At, float* y, int d, int IterNum, int m, int 
     free(Ut);
     free(V);
     free(Um);
+    cudaDeviceReset();
 }
 
 int main(){
@@ -343,6 +345,7 @@ int main(){
 	    //cout << "y is \n";
 	    //printTensor(y, d, 1, 1);
 	    //print Amt
+        warmup();
 	    clock_t t1 = clock();
 	    TS(X, A, At, y, d, IterNum, m, n, r, k);
 	    printf("size %d takes time %f s\n", m, (clock() - t1)*1.0 / CLOCKS_PER_SEC *1000);
