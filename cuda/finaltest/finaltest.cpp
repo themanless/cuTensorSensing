@@ -4,6 +4,7 @@
 #include "initialY.h"
 #include <iostream>
 #include <ctime>
+#include <cstdio>
 #include <cstdlib>
 
 using namespace std;
@@ -301,51 +302,54 @@ void TS(float* X, float* A, float* At, float* y, int d, int IterNum, int m, int 
     if(devInfo) cudaFree(devInfo);
     if (cublasH ) cublasDestroy(cublasH);
     if (cusolverH) cusolverDnDestroy(cusolverH);
-    free(Xr);
     free(Ut);
     free(V);
     free(Um);
 }
 
 int main(){
+    int loopNum;
+    cin >> loopNum;
     int m, n, r, k, d, IterNum;
-    cin >> m >> n >> r >> k >> d >> IterNum;
-    //float* A = new float[m*n*k*d];
-    float*A = (float*)malloc(m*n*k*d*sizeof(float));
-    float*At = (float*)malloc(m*n*k*d*sizeof(float));
-    float*X = (float*)malloc(m*n*k*sizeof(float));
-    float*y = (float*)malloc(d*sizeof(float));
-    //float* X = new float[m*n*k];
-    //float* y = new float[d];
-    for (int i=0; i<m*n*k; i++){
-        X[i] = rand()%(1000) / (float) (1000);
+    for (int it=0; it<loopNum; it++){
+	    cin >> m >> n >> r >> k >> d >> IterNum;
+	    //float* A = new float[m*n*k*d];
+	    float*A = (float*)malloc(m*n*k*d*sizeof(float));
+	    float*At = (float*)malloc(m*n*k*d*sizeof(float));
+	    float*X = (float*)malloc(m*n*k*sizeof(float));
+	    float*y = (float*)malloc(d*sizeof(float));
+	    //float* X = new float[m*n*k];
+	    //float* y = new float[d];
+	    for (int i=0; i<m*n*k; i++){
+		X[i] = rand()%(1000) / (float) (1000);
+	    }
+	    //cout << "X is \n";
+	    //printTensor(X, m*k, n, 1);
+	    for (int i=0; i<m*n*k*d; i++){
+		A[i] = rand()%(1000) / (float) (1000);
+	    }
+	    //cout << "A is \n";
+	    //printTensor(A, d, m*n*k, 1);
+	    for (int i=0; i<m*n*k*d; i++){
+		At[i] = rand()%(1000) / (float) (1000);
+	    }
+	    //cout << "At is \n";
+	    //printTensor(At, d, m*n*k, 1);
+		//initial y by Ax
+		//cuGemv(A, X, y, d, m*n*k);
+	    for (int i=0; i<d; i++){
+		y[i] = rand()%(1000) / (float) (1000);
+	    }
+	    //cout << "y is \n";
+	    //printTensor(y, d, 1, 1);
+	    //print Amt
+	    clock_t t1 = clock();
+	    TS(X, A, At, y, d, IterNum, m, n, r, k);
+	    printf("size %d takes time %f s\n", m, (clock() - t1)*1.0 / CLOCKS_PER_SEC *1000);
+	    free(A);
+	    free(At);
+	    free(X);
+	    free(y);
     }
-    //cout << "X is \n";
-    //printTensor(X, m*k, n, 1);
-    for (int i=0; i<m*n*k*d; i++){
-        A[i] = rand()%(1000) / (float) (1000);
-    }
-    //cout << "A is \n";
-    //printTensor(A, d, m*n*k, 1);
-    for (int i=0; i<m*n*k*d; i++){
-        At[i] = rand()%(1000) / (float) (1000);
-    }
-    //cout << "At is \n";
-    //printTensor(At, d, m*n*k, 1);
-	//initial y by Ax
-	//cuGemv(A, X, y, d, m*n*k);
-    for (int i=0; i<d; i++){
-        y[i] = rand()%(1000) / (float) (1000);
-    }
-    //cout << "y is \n";
-    //printTensor(y, d, 1, 1);
-    //print Amt
-    clock_t t1 = clock();
-    TS(X, A, At, y, d, IterNum, m, n, r, k);
-    printf("takes time %f s\n", (clock() - t1)*1.0 / CLOKS_PER_SEC *1000);
-    free(A);
-    free(At);
-    free(X);
-    free(y);
     return 0;
 }
